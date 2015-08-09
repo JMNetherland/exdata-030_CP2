@@ -15,6 +15,10 @@ data <- NEI %>%
 ##  Turns year into a factor variable
 data$year <- factor(data$year)
 
+##  Turns fips int a factor varible then changes the level names to city names
+data$fips <- factor(data$fips)
+levels(data$fips) <- c("Los Angeles County, California", "Baltimore City, Maryland")
+
 ## Creates a variable g that contains the plot
 g <- ggplot(data, aes(year, total)) 
 
@@ -33,10 +37,10 @@ g <- g + geom_smooth(aes(group = 1)
 ## Adds labels to x and y and sets title
 g <- g + labs(x = "Year"
               , y = "Total Emissions(kt)"
-              , title = expression(bold("Comparison Of Total Emmisions By Year For Baltimore City and Los Angeles Motor Vehicles")))
+              , title = expression(bold("Comparison Of Total Emmisions By Year For\nBaltimore City and Los Angeles Motor Vehicles")))
 
 ##  Intialize png graphic device with size 480x480
-png(filename = "CP2_plot6.png"
+png(filename = "plot6.png"
     , width = 480
     , height = 480)
 

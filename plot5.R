@@ -33,7 +33,7 @@ g <- g + labs(x = "Year"
               , title = expression(bold("Total Emmisions By Year For Baltimore City Motor Vehicles")))
 
 ##  Intialize png graphic device with size 480x480
-png(filename = "CP2_plot5.png"
+png(filename = "plot5.png"
     , width = 480
     , height = 480)
 
